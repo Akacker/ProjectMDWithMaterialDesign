@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#292b3d</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name = "c1">#2c82c9</color>
+    <color name = "year">#999999</color>
+    <color name = "title">#222222</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_grey">#424242</color>
+    <color name="medium_grey">#9E9E9E</color>
+    <color name="button_grey">#757575</color>
+</resources>
