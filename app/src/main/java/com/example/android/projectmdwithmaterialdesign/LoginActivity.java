@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,61 +27,50 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     SignInButton signIn;
     GoogleSignInClient mGoogleSignInClient;
     private int RC_SIGN_IN = 1;
     private String TAG = "LoginActivity";
-    private Button signout;
-    private EditText emailInput;
-
-    private EditText passwordInput;
-
-    private TextView signUpText;
-
-    private TextView loginError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mAuth = FirebaseAuth.getInstance();
 
-    signIn = (SignInButton)findViewById(R.id.sign_in_button);
-    signout = (Button)findViewById(R.id.sign_out_button);
-    mAuth = FirebaseAuth.getInstance();
-    // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-    // Configure Google Sign In
-    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build();
-    // Build a GoogleSignInClient with the options specified by gso.
-    mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        signIn = (SignInButton) findViewById(R.id.sign_in_button);
+        mAuth = FirebaseAuth.getInstance();
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // Configure Google Sign In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("517290572586-v2jvdbuai2r3uivfsdh84jf18mg5j9hs.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         signIn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            signIn();
-        }
-    });
-}
-    private void sign_Out(View view)
-    {
-        mAuth.signOut(); //sign out of the account
-        signout.setVisibility(View.GONE);
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
     }
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+        Intent i2 = new Intent(this, StartHereActivity.class);
+        startActivity(i2);
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         super.onActivityResult(requestCode, resultCode, data);
+
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
@@ -123,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
 
-        signout.setVisibility(View.VISIBLE);
+        //signout.setVisibility(View.VISIBLE);
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (acct != null) {
             String personName = acct.getDisplayName();
@@ -132,7 +122,15 @@ public class LoginActivity extends AppCompatActivity {
             String personEmail = acct.getEmail();
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
-            Toast.makeText(LoginActivity.this, personName,Toast.LENGTH_SHORT ).show();
+            Toast.makeText(LoginActivity.this, personName, Toast.LENGTH_SHORT).show();
         }
     }
+
 }
+
+       /* public void gotostarthereactivity(View view)
+        {
+            Button gtsh = (Button)findViewById(R.id.gotostarthereactivitybutton);
+            Intent i2 = new Intent(this, StartHereActivity.class);
+            startActivity(i2);
+        }*/
