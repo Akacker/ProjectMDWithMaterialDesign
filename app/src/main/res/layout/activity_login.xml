@@ -122,6 +122,22 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="98dp" />
 
+        <Button
+            android:id="@+id/continuetoappbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/c1"
+            android:padding="4dp"
+            android:text="Continue to App"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:onClick="gotostarthereactivity"/>
+
 
     </RelativeLayout>
 

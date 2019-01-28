@@ -31,6 +31,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     SignInButton signIn;
+    private  Button ctab; //continue to app button
     GoogleSignInClient mGoogleSignInClient;
     private int RC_SIGN_IN = 1;
     private String TAG = "LoginActivity";
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         signIn = (SignInButton) findViewById(R.id.sign_in_button);
+        ctab = (Button) findViewById(R.id.continuetoappbutton);
         mAuth = FirebaseAuth.getInstance();
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -63,10 +65,13 @@ public class LoginActivity extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    public void gotostarthereactivity(View view)
+    {
         Intent i2 = new Intent(this, StartHereActivity.class);
         startActivity(i2);
     }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -112,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-
+        ctab.setVisibility(View.VISIBLE);
         //signout.setVisibility(View.VISIBLE);
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (acct != null) {
@@ -127,10 +132,3 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 }
-
-       /* public void gotostarthereactivity(View view)
-        {
-            Button gtsh = (Button)findViewById(R.id.gotostarthereactivitybutton);
-            Intent i2 = new Intent(this, StartHereActivity.class);
-            startActivity(i2);
-        }*/
