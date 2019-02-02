@@ -3,14 +3,14 @@
         <item
             android:icon="@drawable/ic_home_black_24dp"
             android:tint="@color/button_grey"
-            android:title="One" />
+            android:title="My Profile" />
         <item
             android:icon="@drawable/ic_favorite_black_24dp"
             android:tint="@color/button_grey"
-            android:title="Two" />
+            android:title="Patients"/>
         <item
             android:icon="@drawable/ic_bookmark_black_24dp"
             android:tint="@color/button_grey"
-            android:title="Three" />
+            android:title="Give Feedback" />
     </group>
 </menu>
