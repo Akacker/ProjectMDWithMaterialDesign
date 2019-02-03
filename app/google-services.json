@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:517290572586:android:1a9603e99a036a3c",
+        "mobilesdk_app_id": "1:517290572586:android:42a4f3b469a43223",
         "android_client_info": {
-          "package_name": "com.example.android.projectmdwithmaterialdesign"
+          "package_name": "com.example.android.emailtrial"
         }
       },
       "oauth_client": [
         {
-          "client_id": "517290572586-polqtmubdjh9oc6csb8fk5auqm2nfpll.apps.googleusercontent.com",
+          "client_id": "517290572586-ejn40ghuguaam6492bsqp1sqs5ppavs7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.projectmdwithmaterialdesign",
+            "package_name": "com.example.android.emailtrial",
             "certificate_hash": "193e7411cc0bc2503bb5bc8eba8b4b0f2841fbe0"
           }
         },
@@ -52,17 +52,17 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:517290572586:android:4988e028ba8a93d6",
+        "mobilesdk_app_id": "1:517290572586:android:1a9603e99a036a3c",
         "android_client_info": {
-          "package_name": "com.example.android.trial"
+          "package_name": "com.example.android.projectmdwithmaterialdesign"
         }
       },
       "oauth_client": [
         {
-          "client_id": "517290572586-2hvtfnk109i2vvgqrd62qklh2bcj03n8.apps.googleusercontent.com",
+          "client_id": "517290572586-polqtmubdjh9oc6csb8fk5auqm2nfpll.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.trial",
+            "package_name": "com.example.android.projectmdwithmaterialdesign",
             "certificate_hash": "193e7411cc0bc2503bb5bc8eba8b4b0f2841fbe0"
           }
         },

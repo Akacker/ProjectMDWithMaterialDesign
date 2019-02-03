@@ -6,7 +6,7 @@
     android:gravity="center_horizontal"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".LoginActivity">
+    tools:context=".SignUpActivity">
 
     <ScrollView
         android:id="@+id/login_form"
@@ -79,7 +79,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/buttonLogin"
+                android:id="@+id/buttonSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -88,59 +88,19 @@
                 android:background="@color/c1"
                 android:duplicateParentState="false"
                 android:padding="4dp"
-                android:text="Log In with Email"
+                android:text="Sign Up with Email"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewSignup"
+                android:id="@+id/textViewLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:padding="15dp"
-                android:text="Don't have account? Sign Up"
+                android:text="Already have an account?  Log In"
                 android:textAlignment="center"
                 android:textColor="@android:color/black" />
-
-            <TextView
-                android:id="@+id/ortext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="145dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="136dp"
-                android:backgroundTint="@color/white"
-                android:text="or Sign In via Google"
-                android:textColor="@android:color/black" />
-
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/sign_in_button"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="60dp"
-                android:duplicateParentState="false"
-                android:padding="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="98dp" />
-
-            <Button
-                android:id="@+id/continuetoappbutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="216dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/c1"
-                android:onClick="gotostarthereactivity"
-                android:padding="4dp"
-                android:text="Continue to App"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:visibility="gone" />
 
 
         </LinearLayout>
